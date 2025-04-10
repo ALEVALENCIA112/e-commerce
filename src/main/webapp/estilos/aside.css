@@ -1,0 +1,6 @@
+@charset "UTF-8";
+aside {
+    margin: 10px 0;
+    width: 100%; /* Ensure full width for child elements */
+    text-align: center; /* Center text within the aside */
+}

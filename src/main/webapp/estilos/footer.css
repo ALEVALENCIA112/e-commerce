@@ -1,0 +1,23 @@
+@charset "UTF-8";
+footer {
+    margin: 10px 0;
+    width: 100%; /* Ensure full width for child elements */
+    text-align: center; /* Center text within the footer */
+}
+
+.social-media-buttons {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+

@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+section {
+	margin: 10px 0;
+	width: 100%; /* Ensure full width for child elements */
+	text-align: left; /* Center text within the section */
+}
+
+h4, h5, p {
+	color: black;
+}
+
+h4 {
+	margin-top: 0px;
+	margin-left: 20px;
+	font-size: 1.2em;
+}
+
+
+h5 {
+	margin-top: 0px;
+	margin-left: 20px;
+	font-size: 1.2em;
+}
+
+p {
+	margin-top: 0px;
+	margin-left: 50px;
+	font-size: 1em;
+}
+
+image-format {
+    width: 5%;
+    height: 5%;
+}
