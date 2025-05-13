@@ -1,0 +1,149 @@
+/* Estilos generales */
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+    
+    .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+    }
+    
+    /* Estilos del encabezado */
+    header {
+        background: #f4f4f4;
+        color: #333;
+        padding-top: 20px;
+        min-height: 70px;
+        border-bottom: #ddd 1px solid;
+        text-align: center;
+    }
+    
+    header h1 {
+        margin: 0;
+        font-size: 2em;
+    }
+    
+    header h2 {
+        font-size: 1.4em;
+    }
+    
+    header h3 {
+        font-size: 1.2em;
+    }
+    
+    /* Estilos de la navegación */
+    nav {
+        background: #333;
+        color: #fff;
+        padding: 10px;
+    }
+    
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 5px 15px;
+    }
+    
+    nav a:hover {
+        background: #444;
+        color: #f4f4f4;
+    }
+    
+    /* Estilos de la sección principal */
+    main {
+        padding: 20px;
+    }
+    
+    #main-section {
+        float: left;
+        width: 68%;
+        box-sizing: border-box;
+    }
+    
+    /* Estilos de la barra lateral */
+    aside {
+        float: right;
+        width: 30%;
+        background: #f4f4f4;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    
+    /* Estilos del pie de página */
+    footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+    }
+    
+    /* Estilos de la lista de productos */
+    .product-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .product-item {
+        border: 1px solid #ddd;
+        padding: 15px;
+        text-align: center;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+        max-width: 300px; /* Ancho máximo en pantallas grandes */
+    }
+    
+    .product-item:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .product-image {
+        width: 100%; /* Las imágenes ocupan todo el ancho del contenedor */
+        height: auto;
+        object-fit: cover; /* Ajusta la imagen al contenedor */
+        margin-bottom: 10px;
+    }
+    
+    .product-item h4 {
+        margin-top: 0;
+        font-size: 1.2em;
+    }
+    
+    .product-item p {
+        font-size: 0.9em;
+        color: #666;
+    }
+    
+    .product-item button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    
+    .product-item button:hover {
+        background-color: #45a049;
+    }
+    
+    /* Estilos para los botones de redes sociales */
+    .social-media-buttons {
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        margin: 0 10px;
+    }
