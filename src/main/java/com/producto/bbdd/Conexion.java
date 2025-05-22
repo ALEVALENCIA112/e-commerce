@@ -46,17 +46,32 @@ public class Conexion {
 		}
 	}
 
+//	public ResultSet ejecutarConsulta(String sql, Object... parametros) throws SQLException {
+//	    try {
+//	        PreparedStatement pstmt = con.prepareStatement(sql);
+//	        establecerParametros(pstmt, parametros);
+//	        ResultSet rs = pstmt.executeQuery(); // Guardar el ResultSet en una variable
+//	        return rs;
+//	    } catch (SQLException e) {
+//	        System.err.println("Error en la consulta SQL: " + e.getMessage() + " - SQL: " + sql); // Imprimir la consulta
+//	        return null;
+//	    }
+//	}
+	
 	public ResultSet ejecutarConsulta(String sql, Object... parametros) throws SQLException {
+	    PreparedStatement pstmt = null;
+	    ResultSet rs = null;
 	    try {
-	        PreparedStatement pstmt = con.prepareStatement(sql);
+	        pstmt = con.prepareStatement(sql);
 	        establecerParametros(pstmt, parametros);
-	        ResultSet rs = pstmt.executeQuery(); // Guardar el ResultSet en una variable
-	        return rs;
+	        rs = pstmt.executeQuery();
+	        return rs; // Retornar el ResultSet
 	    } catch (SQLException e) {
-	        System.err.println("Error en la consulta SQL: " + e.getMessage() + " - SQL: " + sql); // Imprimir la consulta
-	        return null;
+	        System.err.println("Error en la consulta SQL: " + e.getMessage() + " - SQL: " + sql);
+	        throw e; // Relanzar la excepción para que se maneje en el código que llama a este método
 	    }
 	}
+	
 
 	private void establecerParametros(PreparedStatement pstmt, Object... parametros) throws SQLException {
 		if (parametros != null) {
