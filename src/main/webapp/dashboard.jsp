@@ -26,11 +26,17 @@
             <h1>Bienvenido</h1>
         </header>
         <nav>
-            <% if (rolUsuario == 1) { %>  <a href="registroUsuario.jsp">Registro de Usuarios</a>
-            <% } else if (rolUsuario == 2) { %>  <a href="productos.jsp">Productos</a>
-            <% } else if (rolUsuario == 3) { %>  <a href="cambiarContrasena.jsp">Cambiar Contraseña</a><a href="gestion.jsp">Gestion Productos</a>
+            <% if (rolUsuario == 1) { %>
+                 <a href="registroUsuario.jsp">Registro de Usuarios</a>
+            <% } else if (rolUsuario == 2) { %>
+                 <a href="productos.jsp">Productos</a>
+                 <a href="categoria.jsp">Categorias</a>
+                 <a href="carrito.jsp">Carrito de Compras</a> <% } else if (rolUsuario == 3) { %>
+                 <a href="cambiarContrasena.jsp">Cambiar Contraseña</a>
+                 <a href="gestion.jsp">Gestion Productos</a>
             <% } %>
-            <a href="cerrarSesion.jsp">Cerrar Sesión</a>  </nav>
+            <a href="cerrarSesion.jsp">Cerrar Sesión</a>
+         </nav>
         <main>
             <section>
                 <h2>Bienvenido, <%= correoUsuario %></h2>

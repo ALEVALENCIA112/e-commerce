@@ -9,10 +9,25 @@
 <link rel="stylesheet" type="text/css" href="estilos/footer.css">
 <link rel="stylesheet" type="text/css" href="estilos/section.css">
 <link rel="stylesheet" type="text/css" href="estilos/aside.css">
+<style>
+.validation-badges {
+    position: absolute;
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    right: 10px; /* Ajusta la distancia desde la derecha */
+}
+
+.validation-badges p {
+    margin-bottom: 5px; /* Espacio entre las insignias */
+}
+
+.header-container {
+    position: relative; /* Para que los badges se posicionen relativamente a este contenedor */
+}
+</style>
 </head>
 <body>
 	<div class="container">
-		<div class="border-container">
+		<div class="border-container header-container">
 			<header>
 				<h1>MANIMEC</h1>
 				<h2>Muebles de calidad hechos con el mejor material</h2>
@@ -20,8 +35,24 @@
 					personalizados al gusto de cada persona</h3>
 
 			</header>
-		</div>
+			<div class="validation-badges">
+				<p>
+					<a href="https://jigsaw.w3.org/css-validator/check/referer"> <img
+						style="border: 0; width: 88px; height: 31px"
+						src="https://jigsaw.w3.org/css-validator/images/vcss"
+						alt="¡CSS Válido!" />
+					</a>
+				</p>
 
+				<p>
+					<a href="https://jigsaw.w3.org/css-validator/check/referer"> <img
+						style="border: 0; width: 88px; height: 31px"
+						src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+						alt="¡CSS Válido!" />
+					</a>
+				</p>
+			</div>
+		</div>
 
 
 		<nav>
@@ -30,12 +61,11 @@
 		</nav>
 
 
+
 		<div class="inner-container-wrapper">
 
 			<div class="inner-container">
-				<!-- Content for the first inner container -->
 				<section id="main-section">
-					<!-- Add section content here -->
 					<h4>
 						Bienvenido a nuestro sitio web donde<br>podras encontrar los
 						mejores muebles
@@ -49,12 +79,12 @@
 					<h3>Explora nuestros productos y encuentra el mueble perfecto
 						para tu hogar.</h3>
 
-					
+
+
 				</section>
 			</div>
 
 			<div class="inner-container">
-				<!-- Content for the second inner container -->
 				<aside>
 
 					<h4>Datos del desarrollador</h4>
@@ -84,7 +114,6 @@
 		</div>
 
 		<div class="border-container">
-			<!-- Content for the footer container -->
 			<footer>
 				<div class="social-media-buttons">
 					<a href="https://www.facebook.com" target="_blank"> <img

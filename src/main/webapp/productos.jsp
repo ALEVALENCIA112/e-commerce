@@ -42,15 +42,15 @@
                                 if (categoriaIdStr != null && !categoriaIdStr.isEmpty()) {
                                     try {
                                         categoriaId = Integer.parseInt(categoriaIdStr);
-                                        sql = "SELECT nombre, descripcion, precio, stock FROM PRODUCTO WHERE id_categoria = ?";
+                                        sql = "SELECT id_producto, nombre, descripcion, precio, stock FROM PRODUCTO WHERE id_categoria = ?";
                                         rs = con.ejecutarConsulta(sql, categoriaId);
                                     } catch (NumberFormatException e) {
                                         out.println("<div class='error-message'>Categoría no válida. Se mostrarán todos los productos.</div>");
-                                        sql = "SELECT nombre, descripcion, precio, stock FROM PRODUCTO";
+                                        sql = "SELECT id_producto, nombre, descripcion, precio, stock FROM PRODUCTO";
                                         rs = con.ejecutarConsulta(sql);
                                     }
                                 } else {
-                                    sql = "SELECT nombre, descripcion, precio, stock FROM PRODUCTO";
+                                    sql = "SELECT id_producto, nombre, descripcion, precio, stock FROM PRODUCTO";
                                     rs = con.ejecutarConsulta(sql);
                                 }
 
@@ -62,6 +62,7 @@
                     <%
                                     } else {
                                         while (rs.next()) {
+                                            int idProducto = rs.getInt("id_producto");
                                             String nombre = rs.getString("nombre");
                                             String descripcion = rs.getString("descripcion");
                                             double precio = rs.getDouble("precio");
@@ -70,11 +71,14 @@
                     %>
                                             <div class="product-item">
                                                 <img src="<%= imagen %>" alt="<%= nombre %>" onerror="this.src='img/mueble_2.jpeg'" class="product-image">
-                                                <h4 ><%= nombre %></h4>
-                                                <p ><%= descripcion %></p>
-                                                <p >Precio: $<%= String.format("%.2f", precio) %></p>
-                                                <p >Disponibles: <%= stock %> unidades</p>
-                                                <button >Añadir al carrito</button>
+                                                <h4><%= nombre %></h4>
+                                                <p><%= descripcion %></p>
+                                                <p>Precio: $<%= String.format("%.2f", precio) %></p>
+                                                <p>Disponibles: <%= stock %> unidades</p>
+                                                <form action="agregar_al_carrito.jsp" method="post">
+                                                    <input type="hidden" name="id_producto" value="<%= idProducto %>">
+                                                    <button type="submit">Añadir al carrito</button>
+                                                </form>
                                             </div>
                     <%
                                         }
@@ -86,7 +90,7 @@
                                 }
                             } else {
                     %>
-                                    <div class="error-message">Error al conectar con la base de datos.</div>
+                                <div class="error-message">Error al conectar con la base de datos.</div>
                     <%
                             }
                         } catch (SQLException e) {
